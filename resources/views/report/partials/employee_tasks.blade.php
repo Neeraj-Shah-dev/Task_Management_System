@@ -46,24 +46,27 @@
                         @if($employee->tasks->isNotEmpty())
                             @foreach($employee->tasks as $task)
                                 <tr>
-                                    <td>{{ $employee->name }}</td>
+                                    <td>{{ $employee->name}}</td>
                                     <td>{{ $employee->designation }}</td>
-                                    <td>{{ $task->task_id }}</td>
+                                    <td>{{ $task->task_id}}</td>
                                     <td>{{ $task->deadline }}</td>
-                                    <td>{{ $task->status }}</td>
+                                    <td>{{ $task->status}}</td>
                                 </tr>
                             @endforeach
                         @else
                             <tr>
                                 <td>{{ $employee->name }}</td>
                                 <td>{{ $employee->designation }}</td>
-                                <td class="text-center" colspan="3">No tasks assigned</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
                             </tr>
                         @endif
 
                     @empty
                         <tr>
                             <td colspan="5" class="text-center">No employees found.</td>
+                           
                         </tr>
                     @endforelse
 

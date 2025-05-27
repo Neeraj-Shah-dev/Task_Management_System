@@ -29,7 +29,8 @@
             @error('task_id')
                 <small class="text-danger">* {{ $message }}</small>
             @enderror
-            <input type="text" name="task_id" id="task_id" class="form-control">
+            <input type="text" name="task_id" id="task_id" class="form-control"
+             value="{{ $errors->has('task_id') ? '' : old('task_id') }}">
         </div>
 
         <div class="form-group mt-3">
@@ -37,7 +38,8 @@
             @error('title')
                 <small class="text-danger">* {{ $message }}</small>
             @enderror
-            <input type="text" name="title" id="title" class="form-control">
+            <input type="text" name="title" id="title" class="form-control"
+             value="{{ $errors->has('title') ? '' : old('title') }}">
         </div>
 
         <div class="form-group mt-3">
@@ -45,7 +47,8 @@
             @error('description')
                 <small class="text-danger">* {{ $message }}</small>
             @enderror
-            <input type="text" name="description" id="description" class="form-control">
+            <input type="text" name="description" id="description" class="form-control"
+             value="{{ $errors->has('description') ? '' : old('description') }}">
         </div>
 
         <div class="form-group mt-3">
@@ -53,7 +56,8 @@
             @error('deadline')
                 <small class="text-danger">* {{ $message }}</small>
             @enderror
-            <input type="date" name="deadline" id="deadline" class="form-control">
+            <input type="date" name="deadline" id="deadline" class="form-control"
+             value="{{ $errors->has('deadline') ? '' : old('deadline') }}">
         </div>
 
         <div class="form-group mt-3">

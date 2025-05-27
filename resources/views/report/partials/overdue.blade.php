@@ -43,7 +43,7 @@
             <th>Status</th>
         </tr>
     </thead>
-    <tbody>
+    {{-- <tbody>
         @forelse($tasks as $task)
         <tr>
             <td>{{ $task->task_id }}</td>
@@ -54,9 +54,38 @@
         </tr>
         @empty
         <tr>
-            <td colspan="4" class="text-center">No overdue tasks found.</td>
+            <td>No overdue tasks</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
         </tr>
         @endforelse
+    </tbody> --}}
+
+    <tbody>
+        @if($tasks->isNotEmpty())
+        @foreach ($tasks as $task)
+        <tr>
+            <td>{{ $task->task_id }}</td>
+            <td>{{ $task->deadline }}</td>
+            <td>{{ $task->overdue_days }} days</td>
+            <td>{{ $task->employee->name ?? 'N/A' }}</td>
+            <td>{{ $task->status }}</td>
+        </tr>
+        @endforeach
+        @else
+                <tr>
+                    <td>No Overdue</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                
+        @endif
+
+
     </tbody>
 </table>
 </div>

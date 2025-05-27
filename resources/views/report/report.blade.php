@@ -16,6 +16,14 @@
             margin-left: 10px;
             font-size: 20px;
         }
+
+        .count{
+            font-size: 30px;
+            color: white;
+            padding: 20px 40px;
+            margin-right:40px;
+            border:2px solid grey;
+        }
     </style>
 
 </head>
@@ -38,16 +46,21 @@
                 {{-- link 1 --}}
 
                 <a href="{{ route('reports.overdue') }}" class="text-decoration-none">
-                    <div class="text-bg-primary" id="button">
-                        Overdue Tasks</div>
+                   
+                    <div class="text-bg-primary d-flex justify-content-center align-items-center" id="button">
+                         <div class="count">{{$overdueCount }}</div>
+                         <p>Overdue Tasks</p>
+                    </div>
                 </a>
 
 
                 {{-- link 2 --}}
 
                 <a href="{{ route('reports.completed') }}" class="text-decoration-none">
-                    <div class="text-bg-warning" id="button">
-                        Completed Tasks</div>
+                    <div class="text-bg-warning d-flex justify-content-center align-items-center" id="button">
+                        <div class="count">{{$completedCount }}</div>    
+                        <p>Completed Tasks</p>
+                    </div>
                 </a>
 
 
@@ -59,8 +72,9 @@
                 {{-- link 3 --}}
 
                 <a href="{{ route('reports.pending') }}" class="text-decoration-none">
-                    <div class="text-bg-danger" id="button">
-                        Pending Tasks
+                    <div class="text-bg-danger d-flex justify-content-center align-items-center" id="button">
+                        <div class="count">{{$pendingCount }}</div>
+                        <p>Pending Tasks</p>
                     </div>
                 </a>
 
@@ -68,8 +82,9 @@
                 {{-- link 4 --}}
                 
                     <a href="{{ route('reports.employees') }}" class="text-decoration-none">
-                    <div class="text-bg-success" id="button">    
-                        Tasks per Employee
+                    <div class="text-bg-success  d-flex justify-content-between align-items-center" id="button">   
+                        <div class="count">{{$employeeTaskCount }}</div>
+                        <p>Tasks Per Employee</p>
                      </div>
                     </a>
                

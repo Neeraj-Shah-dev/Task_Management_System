@@ -30,7 +30,8 @@
             @error('employee_id')
                 <small class="text-danger">* {{ $message }}</small>
             @enderror
-            <input type="text" name="employee_id" id="employee_id" class="form-control">
+            <input type="text" name="employee_id" id="employee_id" class="form-control"  
+            value="{{ $errors->has('employee_id') ? '' : old('employee_id') }}">
         </div>
 
         <div class="form-group mt-3">
@@ -38,7 +39,8 @@
             @error('name')
                 <small class="text-danger">* {{ $message }}</small>
             @enderror
-            <input type="text" name="name" id="name" class="form-control">
+            <input type="text" name="name" id="name" class="form-control"
+            value="{{ $errors->has('name') ? '' : old('name') }}">
         </div>
 
         <div class="form-group mt-3">
@@ -46,7 +48,8 @@
             @error('email')
                 <small class="text-danger">* {{ $message }}</small>
             @enderror
-            <input type="email" name="email" id="email" class="form-control">
+            <input type="email" name="email" id="email" class="form-control"
+            value="{{ $errors->has('email') ? '' : old('email') }}">
         </div>
 
         <div class="form-group mt-3">
@@ -54,7 +57,8 @@
             @error('designation')
                 <small class="text-danger">* {{ $message }}</small>
             @enderror
-            <input type="text" name="designation" id="designation" class="form-control">
+            <input type="text" name="designation" id="designation" class="form-control"
+             value="{{ $errors->has('designation') ? '' : old('designation') }}">
         </div>
 
         <div class="form-group mt-3">
@@ -62,7 +66,8 @@
             @error('joining_date')
                 <small class="text-danger">* {{ $message }}</small>
             @enderror
-            <input type="date" name="joining_date" id="joining_date" class="form-control">
+            <input type="date" name="joining_date" id="joining_date" class="form-control"
+             value="{{ $errors->has('joining_date') ? '' : old('joining_date') }}">
         </div>
 
         <div class="form-group mt-5">

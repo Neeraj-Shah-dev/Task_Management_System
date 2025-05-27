@@ -60,7 +60,7 @@ class EmployeeController extends Controller
             'name' => 'required',
             'email' => 'required|email',
             'designation' => 'required',
-            'joining_date' => 'required'
+            'joining_date' => 'required|date|before:today'
         ]);
 
         $employee->update($data);

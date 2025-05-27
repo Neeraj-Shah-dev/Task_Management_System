@@ -11,7 +11,24 @@ class ReportController extends Controller
 {
     public function index()
     {
-        return view('report.report');
+
+         $today = new DateTime();
+
+    $overdueCount = Task::where('status', '!=', 'Completed')
+        ->whereDate('deadline', '<', $today->format('Y-m-d'))
+        ->count();
+
+    $completedCount = Task::where('status', 'Completed')->count();
+    
+    $pendingCount = Task::where('status', 'Pending')->count();
+
+    $employeeTaskCount = Task::count(); 
+    return view('report.report', compact(
+        'overdueCount',
+        'completedCount',
+        'pendingCount',
+        'employeeTaskCount'
+    ));
     }
 
     // overdue tasks

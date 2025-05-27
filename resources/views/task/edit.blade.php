@@ -23,7 +23,7 @@
 
     <form action="{{ route('task.update', ['task' => $task]) }}" method="post"
         class="form border rounded border-secondary p-3 m-5">
-
+        
         @csrf
         @method('put')
 

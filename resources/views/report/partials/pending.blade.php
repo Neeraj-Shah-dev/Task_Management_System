@@ -42,7 +42,7 @@
         </tr>
     </thead>
     <tbody>
-        @forelse($tasks as $task)
+        {{-- @forelse($tasks as $task)
         <tr>
             <td>{{ $task->task_id }}</td>
             <td>{{ $task->title }}</td>
@@ -53,10 +53,42 @@
         </tr>
         @empty
         <tr>
-            <td colspan="4" class="text-center">No pending tasks found.</td>
+            {{-- <td colspan="4" class="text-center">No pending tasks found.</td> 
+            <td>No Pending task</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
         </tr>
-        @endforelse
+        @endforelse--}}
+
+         @if ($tasks->isNotEmpty())
+                     @foreach($tasks as $task)
+             <tr>
+            <td>{{ $task->task_id }}</td>
+            <td>{{ $task->title }}</td>
+            <td>{{ $task->description }}</td>
+            <td>{{ $task->deadline }}</td>
+            <td>{{ $task->employee->name ?? 'N/A' }}</td>
+            <td>{{ $task->status }}</td>
+        </tr>
+        @endforeach
+        @else
+                <tr>
+                    <td>No tasks</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                
+                @endif
+
     </tbody>
+
+
 </table>
 
 </div>

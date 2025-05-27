@@ -30,7 +30,8 @@
             @error('name')
                 <small class="text-danger">* {{ $message }}</small>
             @enderror
-            <input type="text" name="name" id="name" class="form-control" value="{{ $employee->name }}">
+            <input type="text" name="name" id="name" class="form-control" 
+            value="{{ $employee->name }}">
         </div>
 
         <div class="form-group mt-3">

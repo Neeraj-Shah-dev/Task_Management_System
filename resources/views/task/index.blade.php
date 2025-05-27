@@ -45,7 +45,7 @@
                     <th>Deadline</th>
                     <th>Assigned To</th>
                     <th>Status</th>
-                    <th>Action</th>
+                    <th class="no-sort">Action</th>
                 </tr>
             </thead>
 
@@ -64,10 +64,10 @@
                         <td>
                             <a href="{{ route('task.edit', ['task' => $task]) }}" class="btn btn-primary">Edit</a>
 
-                            <form action="{{ route('task.delete', ['task' => $task]) }}" method="get" class="d-inline">
+                            <form action="{{ route('task.delete', ['task' => $task]) }}" method="get" class="d-inline"  onsubmit="return confirmDelete()">
                                 @csrf
                                 @method('delete')
-                                <input type="submit" value="delete" class="btn btn-danger">
+                                <input type="submit" value="Delete" class="btn btn-danger" name="del-btn">
                             </form>
 
                         </td>
@@ -82,9 +82,24 @@
 
 
     <script>
+        // Datatables script
         $(document).ready(function () {
-            $('#myTable').DataTable();
+            $('#myTable').DataTable({
+                     "columnDefs": [
+            {
+                "orderable": false,
+                "targets": 'no-sort'
+            }
+        ]
+                });
         });
+
+
+        // Javascript script
+         function confirmDelete() {
+        return confirm("Are you sure you want to delete this task?");
+    }
+
     </script>
 
     @endsection

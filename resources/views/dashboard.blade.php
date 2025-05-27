@@ -14,7 +14,7 @@
 <div class="d-flex">
   <!-- Sidebar -->
   <div class="bg-dark text-white p-3 vh-100" style="width: 20vw;">
-    <h4 class="h2 mb-4">Dashboard</h4>
+    <h4 class="h2 mb-4"><a href="/" class="text-decoration-none">Dashboard</a></h4>
     <ul class="nav flex-column">
       <li class="nav-item mb-2">
         <a href="{{ url('employee') }}" class="nav-link text-white">Employee</a>
