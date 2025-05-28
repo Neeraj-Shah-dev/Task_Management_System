@@ -68,3 +68,11 @@ Route::get('/reports/completed', [ReportController::class, 'completedTasks'])->n
 Route::get('/reports/pending', [ReportController::class, 'pendingTasks'])->name('reports.pending');
 
 Route::get('/reports/employees', [ReportController::class, 'employeeTasks'])->name('reports.employees');
+
+// ========================================================
+
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
